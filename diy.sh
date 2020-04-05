@@ -10,6 +10,7 @@ sed -i 's/192.168.1.1/192.168.154.1/g' package/base-files/files/bin/config_gener
 
 rm -f ./.config*
 touch ./.config
+#
 CONFIG_MODULES=y
 CONFIG_HAVE_DOT_CONFIG=y
 # CONFIG_TARGET_sunxi is not set
@@ -2590,8 +2591,8 @@ CONFIG_PACKAGE_luci-lib-fs=y
 #
 # Node.js
 #
-CONFIG_PACKAGE_node=y
-CONFIG_NODEJS_ICU_NONE=y
+# CONFIG_PACKAGE_node is not set
+# CONFIG_NODEJS_ICU_NONE is not set
 # CONFIG_NODEJS_ICU_SMALL is not set
 # CONFIG_PACKAGE_node-arduino-firmata is not set
 # CONFIG_PACKAGE_node-cylon is not set
@@ -5836,9 +5837,6 @@ CONFIG_PACKAGE_ubi-utils=y
 # font-utils
 #
 # CONFIG_PACKAGE_fontconfig is not set
-
-
-
 
 sed -i 's/^[ \t]*//g' ./.config
 make defconfig
