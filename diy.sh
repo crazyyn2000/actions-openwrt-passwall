@@ -7,7 +7,8 @@
 #=================================================
 Modify default IP
 sed -i 's/192.168.1.1/192.168.154.1/g' package/base-files/files/bin/config_generate
-
+rm -f ./.config*
+touch ./.config
 #
 CONFIG_MODULES=y
 CONFIG_HAVE_DOT_CONFIG=y
@@ -5777,3 +5778,7 @@ CONFIG_PACKAGE_ubi-utils=y
 # font-utils
 #
 # CONFIG_PACKAGE_fontconfig is not set
+
+sed -i 's/^[ \t]*//g' ./.config
+make defconfig
+
